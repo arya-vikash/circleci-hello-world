@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  hello_world:
+    docker:
+      - image: node:16-alpine
+    steps:
+      - checkout
+      - run: echo "running helloworld job"
+
+workflows:
+  hello_world_pipeline:
+    jobs:
+      - hello_world
